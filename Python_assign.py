@@ -1,96 +1,96 @@
 #Q.1]
-# name = '''Hi How are you?
-# Starterd learning python.
-# It's really interesting.''' 
+ name = '''Hi How are you?
+ Starterd learning python.
+ It's really interesting.''' 
 
-#1]
-#print(name[:]) 
-# '''Hi How are you?
-# Starterd learning python.
-# It's really interesting. '''
+1]
+print(name[:]) 
+'''Hi How are you?
+Starterd learning python.
+It's really interesting. '''
 
-#2]
-#print(name[-10:-5])    #teres
+2]
+print(name[-10:-5])    #teres
 
-#3]
-#print(name[3:12])   #How are y
+3]
+print(name[3:12])   #How are y
 
-#4]
-#print(name[12:3])  #null
+4]
+print(name[12:3])  #null
 
-#5]
-#print(name[5:6])   #w
+5]
+print(name[5:6])   #w
 
-#6]
-#print(name[-4:-12])   #null
+6]
+print(name[-4:-12])   #null
 
-#7]
-#print(name[::2])  #H o r o?Satr erigpto.I' elyitrsig
+7]
+print(name[::2])  #H o r o?Satr erigpto.I' elyitrsig
 
-#8]
-#print(name[::-2]) .nteen larst nhy nnaldert uyeawHi
+8]
+print(name[::-2]) .nteen larst nhy nnaldert uyeawHi
 
-#Q.2]
-# L1 =['a' , 'b', 20, 30, 't', 100, 300, 400, 'Happy', 'major']
-#a]
-#print(L1[:])   #['a', 'b', 20, 30, 't', 100, 300, 400, 'Happy', 'major']
+Q.2]
+L1 =['a' , 'b', 20, 30, 't', 100, 300, 400, 'Happy', 'major']
+a]
+print(L1[:])   #['a', 'b', 20, 30, 't', 100, 300, 400, 'Happy', 'major']
 
-#b]
-#print(L1[::3])  #['a', 30, 300, 'major']
+b]
+print(L1[::3])  #['a', 30, 300, 'major']
 
-#c]
-#print(L1[::-2])  #['major', 400, 100, 30, 'b']
+c]
+print(L1[::-2])  #['major', 400, 100, 30, 'b']
 
-#d]How to extract  value “Happy” based on index and negative index
-# print(L1[8])
-# print(L1[-2])
+d]How to extract  value “Happy” based on index and negative index
+print(L1[8])
+print(L1[-2])
 
-#e]How to check type of data in list at 4th position
-#print(type(L1[4-1]))
+e]How to check type of data in list at 4th position
+print(type(L1[4-1]))
 
-#f]Extract values for 100, 300, 400 
-# print(L1[L1.index(100)])
-# print(L1[L1.index(300)])
-# print(L1[L1.index(400)])
+f]Extract values for 100, 300, 400 
+print(L1[L1.index(100)])
+print(L1[L1.index(300)])
+print(L1[L1.index(400)])
 
-#Q.3]
-# If l2 =[1,2,3,5,[‘a’, ‘b’, ‘work hard’],100 , 200, “Success”] then what is the output of following
-# L2 =[1,2,3,5,['a', 'b', 'work hard'],100 , 200, 'Success']
-# print(L2[4]) #['a', 'b', 'work hard']
-# print(L2[1:5]) #[2, 3, 5, ['a', 'b', 'work hard']]
-# print(L2[7]) #Success
-# print(L2[7][2]) #c
-# print(L2[7][2:]) #ccess
-# print(L2[ : 3]) #[1, 2, 3]
-# print(L2[3:])  #[5, ['a', 'b', 'work hard'], 100, 200, 'Success']
+Q.3]
+If l2 =[1,2,3,5,[‘a’, ‘b’, ‘work hard’],100 , 200, “Success”] then what is the output of following
+L2 =[1,2,3,5,['a', 'b', 'work hard'],100 , 200, 'Success']
+print(L2[4]) #['a', 'b', 'work hard']
+print(L2[1:5]) #[2, 3, 5, ['a', 'b', 'work hard']]
+print(L2[7]) #Success
+print(L2[7][2]) #c
+print(L2[7][2:]) #ccess
+print(L2[ : 3]) #[1, 2, 3]
+print(L2[3:])  #[5, ['a', 'b', 'work hard'], 100, 200, 'Success']
 
-#q.4]From the above l2 value ‘b’ must be changed to ‘BEE’.
-# L2[4][1]='BEE'
+q.4]From the above l2 value ‘b’ must be changed to ‘BEE’.
+L2[4][1]='BEE'
 
-#q.5]	From l2 “BEE” has to discard.
-# del L2[4][1]
-# print(L2)
+q.5]	From l2 “BEE” has to discard.
+del L2[4][1]
+print(L2)
 
-#q.6] In l2 add a dictionary at the end {‘insect’: [‘bee’, ‘moth’] , ‘bird’ : [‘parrot’, ‘sparrow’]}
+q.6] In l2 add a dictionary at the end {‘insect’: [‘bee’, ‘moth’] , ‘bird’ : [‘parrot’, ‘sparrow’]}
 
-# dict={'insect': ['bee', 'moth'] , 'bird ': ['parrot', 'sparrow']}
-# L2.append(dict)
-# print(L2)
+dict={'insect': ['bee', 'moth'] , 'bird ': ['parrot', 'sparrow']}
+L2.append(dict)
+print(L2)
 
-#q.7]From l2 extract insect information.
-# print(L2[len(L2)-1]['insect'])
+q.7]From l2 extract insect information.
+print(L2[len(L2)-1]['insect'])
 
-#q.8]	Create a dictionary d1 = {‘a’:10, ‘b’:20, ‘c’ : 30} and add the d1 at 2nd position of l2
-# d1 = {'a':10, 'b':20, 'c' : 30}
-# L2.insert(2,d1)
-# print(L2)
+q.8]	Create a dictionary d1 = {‘a’:10, ‘b’:20, ‘c’ : 30} and add the d1 at 2nd position of l2
+d1 = {'a':10, 'b':20, 'c' : 30}
+L2.insert(2,d1)
+print(L2)
 
-#q.9] Based on new l2 created here extract the value 10 from l2 dictionary.
-# print(L2[2]['a'])
+q.9] Based on new l2 created here extract the value 10 from l2 dictionary.
+print(L2[2]['a'])
 
-#q.10]
-# L2 =[1,2,3,5, (90,40,50,10), 'Python', 400 ,['a', 'b', 'work hard'],100 , 200, 'Success', (200,300, 'Hundreds')] 
-       # then what is the output of following
+q.10]
+L2 =[1,2,3,5, (90,40,50,10), 'Python', 400 ,['a', 'b', 'work hard'],100 , 200, 'Success', (200,300, 'Hundreds')] 
+       then what is the output of following
 '''print(L2[4][2]) #50
 print(L2[5:])  #['Python', 400, ['a', 'b', 'work hard'], 100, 200, 'Success', (200, 300, 'Hundreds')]
 print(L2[2:]) #[3, 5, (90, 40, 50, 10), 'Python', 400, ['a', 'b', 'work hard'], 100, 200, 'Success', (200, 300, 'Hundreds')]
