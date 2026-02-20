@@ -74,7 +74,7 @@ class Order:
                 print('Invalid Input')
 class Bill:
     #define `g_bill()`
-    def generate_bill(self, c_id):
+   def generate_bill(self, c_id):
         '''
         Docstring for generate_bill
         This function generates the bill
@@ -87,20 +87,26 @@ class Bill:
             WHERE o.c_id = ?
         """, (c_id,))
         records = cursor.fetchall()
+        timestamp = datetime.datetime.now().strftime("%d%m%Y_%H%M%S")
         if not records:
             print("No orders found")
             return
-        print("\n========= FINAL BILL =========")
+        print("\n" + "="*50)
+        print("                 FINAL BILL")
+        print("="*50)
+        print(f"{'Customer ID : ' + str(c_id):<30}{timestamp:>20}\n")
+        print("-"*50)
+        print(f"{'No':<5}{'Item Name':<20}{'Qty':<8}{'Price':<8}{'Total':<8}")
+        print("-"*50)
         total = 0
-        i = 1
-        for row in records:
+        for i, row in enumerate(records, start=1):
             item_total = row[1] * row[2]
             total += item_total
-            print(f"{i}. {row[0]} | {row[1]} = {item_total}")
-            i += 1
-        print("------------------------------")
-        print("Total Amount:", total)
-        print("==============================")
+            print(f"{i:<5}{row[0]:<20}{row[1]:<8}{row[2]:<8}{item_total:<8}")
+        print("-"*50)
+        print(f"{'':<33}Grand Total : {total}")
+        print("="*50)
+        
         #define `p_bill()`
     def print_bill(self, c_id):
         '''
@@ -123,16 +129,22 @@ class Bill:
         filename = os.path.join(path, f"Bill_{timestamp}.txt")
         total = 0
         with open(filename, "w") as f:
-            f.write("====== HOTEL BILL ======\n")
-            f.write(f"Customer ID: {c_id}\n\n")
+            f.write("="*50 + "\n")
+            f.write("              HOTEL BILL\n")
+            f.write("="*50 + "\n")
+            f.write(f"{'Customer ID : ' + str(c_id):<30}{timestamp:>20}\n")
+            f.write("-"*50 + "\n")
+            f.write(f"{'No':<5}{'Item Name':<20}{'Qty':<8}{'Price':<8}{'Total':<8}\n")
+            f.write("-"*50 + "\n")
             for i, row in enumerate(records, start=1):
                 item_total = row[1] * row[2]
                 total += item_total
-                f.write(f"{i}. {row[0]} x {row[1]} = {item_total}\n")
-            f.write("\nTotal Amount: " + str(total))
+                f.write(f"{i:<5}{row[0]:<20}{row[1]:<8}{row[2]:<8}{item_total:<8}\n")
+            f.write("-"*50 + "\n")
+            f.write(f"{'':<33}Grand Total : {total}\n")
+            f.write("="*50 + "\n")
         print("Bill saved at:", filename)
         os.startfile(filename)
-
 
 if __name__ == "__main__":
     admin = Admin()
