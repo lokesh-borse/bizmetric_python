@@ -102,16 +102,48 @@ class StudentBilling:
     def generate_bill(self):
         '''
         Docstring for generate_bill
-        
         This function calculates the total bill by accessing the instance variable
         '''
         total = self.annual_subject_cost+ self.annual_transport+ self.annual_food + self.annual_hostel
-        print("\nTotal Bill of student:")
-        print("Subject Cost:", self.annual_subject_cost)
-        print("Accommodation Cost:", self.annual_hostel)
-        print("Transport Cost:", self.annual_transport)
-        print("Annual Food:", self.annual_food)
-        print("Total Cost:", total)
+        print("\n" + "="*45)
+        print(f"{'Student Bill Summary':^45}")
+        print("="*45)
+        print(f"{'Particulars':<25}{'Amount (₹)':>20}")
+        print("-"*45)
+        print(f"{'Subject Cost':<25}{self.annual_subject_cost:>20}")
+        print(f"{'Accommodation Cost':<25}{self.annual_hostel:>20}")
+        print(f"{'Transport Cost':<25}{self.annual_transport:>20}")
+        print(f"{'Annual Food':<25}{self.annual_food:>20}")
+        print("-"*45)
+        print(f"{'Total Cost':<25}{total:>20}")
+        print("="*45)
+    
+    def print_student_bill(self):
+        '''
+        This function prints the student annual bill into a file
+        '''
+        path = r"E:\BIZMETRIC_TRAINING\PYTHON\daily_practice"
+        timestamp = datetime.datetime.now().strftime("%d%m%Y_%H%M%S")
+        filename = os.path.join(path, f"Student_Bill_{timestamp}.txt")
+        total = self.annual_subject_cost + self.annual_transport + \
+                self.annual_food + self.annual_hostel
+        with open(filename, "w") as f:
+            f.write("="*60 + "\n")
+            f.write(f"{'Student Bill Summary':^60}\n")
+            f.write("="*60 + "\n")
+            f.write(f"{'Generated On : ' + timestamp:^60}\n")
+            f.write("-"*60 + "\n")
+            f.write(f"{'No':<5}{'Particulars':<25}{'Amount (₹)':>20}\n")
+            f.write("-"*60 + "\n")
+            f.write(f"{1:<5}{'Subject Cost':<25}{self.annual_subject_cost:>20}\n")
+            f.write(f"{2:<5}{'Accommodation Cost':<25}{self.annual_hostel:>20}\n")
+            f.write(f"{3:<5}{'Transport Cost':<25}{self.annual_transport:>20}\n")
+            f.write(f"{4:<5}{'Annual Food':<25}{self.annual_food:>20}\n")
+            f.write("-"*60 + "\n")
+            f.write(f"{'':<30}{'Grand Total :':<15}{total:>15}\n")
+            f.write("="*60 + "\n")
+        print("Bill saved at:", filename)
+        os.startfile(filename)
 
 student = StudentBilling()
 
